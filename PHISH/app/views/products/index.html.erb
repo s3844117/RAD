@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<nav>
+      <a class="nav-link" href="/men">Mens</a>
+      <a class="nav-link" href="/women">Womens</a>
+      <a class="nav-link" href="/kids">Kids</a>
+</nav>
+
+<% @products.each do |product| %>
+  <div class="grid-container">
+  <div class="grid-item">
+    <div class="card">
+      <img src=<%=product.imageSource%> alt ="" class="center" width="300" height= "300" >
+      <div class="center">
+        <h2><%=product.name%></h2>
+        <p class="price">$<%=product.price%></p>
+        <p><%=product.description%></p>
+        <input type="button" onLoad="clicked(<%=product.id%>, this);" onclick="myFunction(<%=product.id%>, this);" value="+"/>
+      </div>
+    </div>
+  </div>
+  </div>
+<%end%>
+
+
+<br>
+<script>
+      function myFunction(x, elmnt){
+      if (localStorage.getItem(x) !== null){
+      alert("Removing product " + x + " from saved list");
+      localStorage.removeItem(JSON.stringify(x));
+      elmnt.style.color = 'black';
+    }
+    else{
+      alert("Product saved with id " + x);
+      localStorage.setItem(JSON.stringify(x), JSON.stringify(x));
+      elmnt.style.color = 'blue';
+    }
+      }; 
+</script>
+
+<%= link_to 'New Product', new_product_path %>

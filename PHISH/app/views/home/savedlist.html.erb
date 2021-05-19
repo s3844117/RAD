@@ -1,0 +1,23 @@
+<h1>Saved Items</h1>
+<body>
+    <script>
+    var array = [];
+    for (let i = 0; i < localStorage.length; i++){
+        nextValue = localStorage.getItem(localStorage.key(i));
+        array[i] = nextValue;
+    }
+    
+    for (let i = 0; i<array.length; i++)
+    {
+        document.writeln(array[i]);
+        array[i].show;
+    }
+    </script>
+</body>
+<!--<p id= "id_of_div"></p>-->
+
+<!--</body>-->
+
+<!--//   document.getElementById("item").innerHTML = localStorage.length;-->
+<!--</script>-->
+
