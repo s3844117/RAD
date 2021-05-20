@@ -19,6 +19,17 @@
           <h2><%=kid.product.name%></h2>
           <p class="price">$<%=kid.product.price%></p>
           <p><%=kid.product.description%></p>
+          <input id= <%=kid.product.id%> type="button" onclick="myFunction(<%=kid.product.id%>, this);" />
+        <script>
+          if (localStorage.getItem(<%=kid.product.id%>) !== null){
+            document.getElementById(<%=kid.product.id%>).value = "Saved";
+            document.getElementById(<%=kid.product.id%>).style.color = "blue";
+          }
+          else
+          {
+            document.getElementById(<%=kid.product.id%>).value = "+";
+          }
+        </script>
           <p><button>Add to Cart</button></p>
       </div>
     </div>

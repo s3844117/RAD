@@ -19,7 +19,7 @@
                 {
                     window.html += '<div class="card">' + '<img src=<%=product.imageSource%> alt ="" class="center" width="300" height= "300" >' + 
                     '<div class="center">' + '<h2><%=product.name%></h2>' + '<p class="price">$<%=product.price%></p>' + '<p><%=product.description%></p>'+ 
-                    '<input type="button" onclick="myFunction(<%=product.id%>, this);" value= "Saved" style="color:red"/>' + '</div>' + '</div>';
+                    '<input id=<%= product.id%> type="button" onclick="myFunction(<%=product.id%>, this);" value = "Saved" style= "color: blue"/>'  + '</div>' + '</div>';
                 }
             }
             window.html += "</div>";

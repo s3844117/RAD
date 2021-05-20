@@ -3,6 +3,7 @@
 <h1>Women</h1>
 
 <% @women.each do |woman| %>
+<%path = "/products/" + String(woman.product_id)%>
   <div class="grid-container">
   <div class="grid-item">
     <div class="card">
@@ -11,12 +12,28 @@
         <h2><%=woman.product.name%></h2>
         <p class="price">$<%=woman.product.price%></p>
         <p><%=woman.product.description%></p>
-        <input type="button" onclick="myFunction(<%=woman.product.id%>, this);" value= "+"/>
+        <input id= <%=woman.product.id%> type="button" onclick="myFunction(<%=woman.product.id%>, this);" />
+        <script>
+          if (localStorage.getItem(<%=woman.product.id%>) !== null){
+            document.getElementById(<%=woman.product.id%>).value = "Saved";
+            document.getElementById(<%=woman.product.id%>).style.color = "blue";
+          }
+          else
+          {
+            document.getElementById(<%=woman.product.id%>).value = "+";
+          }
+        </script>
         <input type="button" value = "Add to Cart"/>
       </div>
     </div>
   </div>
   </div>
+  <tr>
+        <td><%= woman.product_id%></td>
+        <td><%= link_to 'Show', path %></td>
+        <td><%= link_to 'Edit', edit_woman_path(woman) %></td>
+        <td><%= link_to 'Destroy', woman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <tr>
 <%end%>
 
 

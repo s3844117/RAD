@@ -17,17 +17,6 @@
       elmnt.style.color = 'blue';
     }
     }; 
-      
-      function saved(x, elmnt)
-      {
-          if (localStorage.getItem(x) !== null){
-            elmnt.value = 'Saved';
-          }
-          else
-          {
-            elmnt.value = '+';
-          }
-      };
 </script>
 <nav>
       <a class="nav-link" href="/men">Mens</a>
@@ -44,7 +33,17 @@
         <h2><%=product.name%></h2>
         <p class="price">$<%=product.price%></p>
         <p><%=product.description%></p>
-        <input type="button" onclick="myFunction(<%=product.id%>, this);" value= "+"/>
+        <input id= <%=product.id%> type="button" onclick="myFunction(<%=product.id%>, this);" />
+        <script>
+          if (localStorage.getItem(<%=product.id%>) !== null){
+            document.getElementById(<%=product.id%>).value = "Saved";
+            document.getElementById(<%=product.id%>).style.color = "blue";
+          }
+          else
+          {
+            document.getElementById(<%=product.id%>).value = "+";
+          }
+        </script>
         <input type="button" value = "Add to Cart"/>
       </div>
     </div>

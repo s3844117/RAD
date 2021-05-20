@@ -3,15 +3,26 @@
 <h1>Men</h1>
 
 <% @men.each do |man| %>
+<%path = "/products/" + String(man.product_id)%>
   <div class="grid-container">
   <div class="grid-item">
     <div class="card">
-      <img src=<%=man.product.imageSource%> alt ="" class="center" width="300" height= "300" >
+      <a href=<%=path%>><img src=<%=man.product.imageSource%> alt ="" class="center" width="300" height= "300"></a>
       <div class="center">
         <h2><%=man.product.name%></h2>
         <p class="price">$<%=man.product.price%></p>
         <p><%=man.product.description%></p>
-        <input type="button" onclick="myFunction(<%=man.product.id%>, this);" value= "+"/>
+        <input id= <%=man.product.id%> type="button" onclick="myFunction(<%=man.product.id%>, this);" />
+        <script>
+          if (localStorage.getItem(<%=man.product.id%>) !== null){
+            document.getElementById(<%=man.product.id%>).value = "Saved";
+            document.getElementById(<%=man.product.id%>).style.color = "blue";
+          }
+          else
+          {
+            document.getElementById(<%=man.product.id%>).value = "+";
+          }
+        </script>
         <input type="button" value = "Add to Cart"/>
       </div>
     </div>
@@ -40,12 +51,12 @@
 <!--          <p><button>Add to Cart</button></p>-->
 <!--      </div>-->
 <!--    </div>-->
-<!--      <tr>-->
-<!--        <td><%= man.product_id%></td>-->
-<!--        <td><%= link_to 'Show', path %></td>-->
-<!--        <td><%= link_to 'Edit', edit_man_path(man) %></td>-->
-<!--        <td><%= link_to 'Destroy', man, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-<!--      </tr>-->
+      <tr>
+        <td><%= man.product_id%></td>
+        <td><%= link_to 'Show', path %></td>
+        <td><%= link_to 'Edit', edit_man_path(man) %></td>
+        <td><%= link_to 'Destroy', man, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
 <!--    <% end %>-->
 <!--  </tbody>-->
 <!--</table>-->
@@ -78,6 +89,13 @@
             elmnt.value = '+';
           }
       };
+      
+      function goTo()
+      {
+        
+      }
+      
+      
 </script>
 
 <%= link_to 'New Man', new_man_path %>
