@@ -14,7 +14,7 @@
     <% @kids.each do |kid| %>
     <%path = "/products/" + String(kid.product_id)%>
       <div class="card">
-        <img src=<%=kid.product.imageSource%> alt ="" class="center" width="300" height= "300" >
+        <a href=<%=path%>><img src=<%=kid.product.imageSource%> alt ="" class="center" width="300" height= "300"></a>
         <div class="center">
           <h2><%=kid.product.name%></h2>
           <p class="price">$<%=kid.product.price%></p>
