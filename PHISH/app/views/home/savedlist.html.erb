@@ -2,32 +2,42 @@
 
     <script>
         var html = "<div>";
+        var count = 0;
     </script>
     <%@products = Product.all%>
-    <div class="grid-container">
+    <div class="center">
     <%@products.each do |product|%>
         <div class="grid-item" id = "products">
+        <%path = "/products/" + String(product.id)%>
         <script>
-            var array = new Array();
+            var array = [];
             for (let i = 0; i < localStorage.length; i++){
             array[i] = localStorage.getItem(localStorage.key(i));
             };
-            // var html = "<div>";
+            if (array.length == 0 && window.count ==0)
+            {
+                window.html += '<h1 style="color: #9370DB">You have nothing saved!</h1>'
+            }
+            else{
+                
             for (var i = 0; i < array.length; i++) 
             {
                 if(<%=product.id%> == array[i])
                 {
-                    window.html += '<div class="card">' + '<img src=<%=product.imageSource%> alt ="" class="center" width="300" height= "300" >' + 
-                    '<div class="center">' + '<h2><%=product.name%></h2>' + '<p class="price">$<%=product.price%></p>' + '<p><%=product.description%></p>'+ 
-                    '<input id=<%= product.id%> type="button" onclick="myFunction(<%=product.id%>, this);" value = "Saved" style= "color: blue"/>'  + '</div>' + '</div>';
+                    window.html += '<a href=<%=path%>><div class="card">' + '<div class ="center">'+'<img class="center" width="300" height= "300" src=<%=product.imageSource%> >' + 
+                    '<div class="center">' + '<b><%=product.name%></b> </div></a>' + '<p class="price">$<%=product.price%></p>' + '<p><%=product.description%></p>'+ 
+                    '<input id=<%= product.id%> type="button" onclick="myFunction(<%=product.id%>, this);" value = "Saved" style= "color: blue"/>' + '<input type="button" value = "Add to Cart"/>' + '</div>' + '</div> </div>';
                 }
             }
-            window.html += "</div>";
+            }
+            window.html += '</div>';
             document.getElementById("products").innerHTML = window.html;
+            count = count +1;
         </script>
     </div>
     </div>
     <%end%>
+    </div>
 
 
 <script>

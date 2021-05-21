@@ -1,16 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Men</h1>
-
+<div class="center">
 <% @men.each do |man| %>
 <%path = "/products/" + String(man.product_id)%>
   <div class="grid-container">
   <div class="grid-item">
-    <div class="card">
-      <a href=<%=path%>><img src=<%=man.product.imageSource%> alt ="" class="center" width="300" height= "300"></a>
+    <a href=<%=path%>><div class="card">
       <div class="center">
-        <h2><%=man.product.name%></h2>
-        <p class="price">$<%=man.product.price%></p>
+      <img width="300" height= "300" class="center" src=<%=man.product.imageSource%> >
+      <div class="center">
+        <b><%=man.product.name%></b>
+      </div>
+      </a>
+      <div>
+        <p class = "center">$<%=man.product.price%></p>
         <p><%=man.product.description%></p>
         <input id= <%=man.product.id%> type="button" onclick="myFunction(<%=man.product.id%>, this);" />
         <script>
@@ -28,38 +32,9 @@
     </div>
   </div>
   </div>
+  </div>
 <%end%>
-
-
-<!--<table>-->
-  <!--<thead>-->
-  <!--  <tr>-->
-  <!--    <th>Product</th>-->
-  <!--    <th colspan="3"></th>-->
-  <!--  </tr>-->
-  <!--</thead>-->
-
-<!--  <tbody>-->
-    <% @men.each do |man| %>
-    <%path = "/products/" + String(man.product_id)%>
-<!--      <div class="card">-->
-<!--        <img src=<%=man.product.imageSource%> alt ="" class="center" width="300" height= "300" >-->
-<!--        <div class="center">-->
-<!--          <h2><%=man.product.name%></h2>-->
-<!--          <p class="price">$<%=man.product.price%></p>-->
-<!--          <p><%=man.product.description%></p>-->
-<!--          <p><button>Add to Cart</button></p>-->
-<!--      </div>-->
-<!--    </div>-->
-      <tr>
-        <td><%= man.product_id%></td>
-        <td><%= link_to 'Show', path %></td>
-        <td><%= link_to 'Edit', edit_man_path(man) %></td>
-        <td><%= link_to 'Destroy', man, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-<!--    <% end %>-->
-<!--  </tbody>-->
-<!--</table>-->
+</div>
 
 <br>
 
@@ -78,24 +53,6 @@
       elmnt.style.color = 'blue';
     }
     }; 
-      
-      function saved(x, elmnt)
-      {
-          if (localStorage.getItem(x) !== null){
-            elmnt.value = 'Saved';
-          }
-          else
-          {
-            elmnt.value = '+';
-          }
-      };
-      
-      function goTo()
-      {
-        
-      }
-      
-      
 </script>
 
 <%= link_to 'New Man', new_man_path %>

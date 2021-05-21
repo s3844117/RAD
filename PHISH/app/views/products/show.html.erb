@@ -2,11 +2,11 @@
 
 <div class = "center">
   <div class="card">
-      <img src=<%= @product.imageSource%> alt="">
+      <img class= "center" width="300" height= "300" src=<%= @product.imageSource%>>
       <div class="container">
         <h4><b><%=@product.name%></b></h4>
         <p><%=@product.description%></p>
-        <p><%=@product.price%></p>
+        <b>$<%=@product.price%></b>
       </div>
   </div>
 </div>

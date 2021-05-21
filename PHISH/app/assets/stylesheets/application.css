@@ -63,3 +63,7 @@ style>
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+b{
+    font-size: 20px;
+  }
