@@ -1,31 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Women</h1>
-
-<div class="center">
-<% @women.each do |woman| %>
-<%path = "/products/" + String(woman.product_id)%>
+<%@product=Product.order('RANDOM()').first%>
+<div class = "center">
+  <%path = "/products/" + String(@product.id)%>
   <div class="grid-container">
   <div class="grid-item">
     <a href=<%=path%>><div class="card">
       <div class="center">
-      <img width="300" height= "300" class="center" src=<%=woman.product.imageSource%> >
+      <img width="300" height= "300" class="center" src=<%=@product.imageSource%> >
       <div class="center">
-        <b><%=woman.product.name%></b>
+        <b><%=@product.name%></b>
       </div>
       </a>
       <div>
-        <p class = "center">$<%=woman.product.price%></p>
-        <p><%=woman.product.description%></p>
-        <input id= <%=woman.product.id%> type="button" onclick="myFunction(<%=woman.product.id%>, this);" />
-        <script>
-          if (localStorage.getItem(<%=woman.product.id%>) !== null){
-            document.getElementById(<%=woman.product.id%>).value = "Saved";
-            document.getElementById(<%=woman.product.id%>).style.color = "blue";
+        <p class = "center">$<%=@product.price%></p>
+        <p><%=@product.description%></p>
+        <input type="button" onclick="myFunction(<%=@product.id%>, this);" id= "ran"></input>
+         <script>
+          if (localStorage.getItem(<%=@product.id%>) !== null){
+            document.getElementById("ran").value = "Saved";
+            document.getElementById("ran").style.color = "blue";
           }
           else
           {
-            document.getElementById(<%=woman.product.id%>).value = "+";
+            document.getElementById("ran").value = "+";
           }
         </script>
         <input type="button" value = "Add to Cart"/>
@@ -34,10 +30,7 @@
   </div>
   </div>
   </div>
-<%end%>
 </div>
-
-<br>
 
 <script>
       function myFunction(x, elmnt){

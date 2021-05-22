@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210516030628) do
+ActiveRecord::Schema.define(version: 20210522101912) do
+
+  create_table "arrivals", force: :cascade do |t|
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "kids", force: :cascade do |t|
     t.integer  "product_id"
@@ -33,6 +39,8 @@ ActiveRecord::Schema.define(version: 20210516030628) do
     t.date     "stockDate"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "imageSource2"
+    t.string   "imageSource3"
   end
 
   create_table "women", force: :cascade do |t|

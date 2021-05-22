@@ -1,44 +1,12 @@
 <h1>PHISH</h1>
 <p>There is something phishy going on!</p>
 
-<%product=Product.order('RANDOM()').first%>
-<div class = "center">
-  <%path = "/products/" + String(product.id)%>
-  <div class="grid-container">
-  <div class="grid-item">
-    <a href=<%=path%>><div class="card">
-      <div class="center">
-      <img width="300" height= "300" class="center" src=<%=product.imageSource%> >
-      <div class="center">
-        <b><%=product.name%></b>
-      </div>
-      </a>
-      <div>
-        <p class = "center">$<%=product.price%></p>
-        <p><%=product.description%></p>
-        <input id= <%=product.id%> type="button" onclick="myFunction(<%=product.id%>, this);" />
-        <script>
-          if (localStorage.getItem(<%=product.id%>) !== null){
-            document.getElementById(<%=product.id%>).value = "Saved";
-            document.getElementById(<%=product.id%>).style.color = "blue";
-          }
-          else
-          {
-            document.getElementById(<%=product.id%>).value = "+";
-          }
-        </script>
-        <input type="button" value = "Add to Cart"/>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
+<%= render 'layouts/topbanner' %>
 <br>
 <br>
 
-
-<%@popular = Product.order('popularityScore DESC')%>
+<%popular = Product.where(popularityScore: 5..Float::INFINITY)%> 
+<%@popular = popular.order('popularityScore DESC')%>
 <h2>Popular Items</h2>
 <div class="center">
   <%@popular.each do |item| %>
@@ -75,7 +43,6 @@
   </div>
 <%end%>
 </div>
-
 
 <script>
       function myFunction(x, elmnt){
