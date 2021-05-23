@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :carts
   resources :arrivals
   resources :products
   resources :kids
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
 
 	get 'users/new' => 'users#new', as: :new_user
 	post 'users' => 'users#create'
+	
+	post 'products' => 'products/#add_to_cart'
 	
 	# ----- add these lines here: -----
 	

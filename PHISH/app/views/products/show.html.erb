@@ -60,7 +60,30 @@
             document.getElementById(<%=@product.id%>).value = "+";
           }
         </script>
-        <!--<input type="button" value = "Add to Cart"/>-->
+        
+        
+        <form method="post" action="/product#add_to_cart">
+          <label for="sizes">Size:</label>
+          <select name="sizes" id="sizes">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+          </select>
+          
+          <label for="colours">Colour:</label>
+          <select name="colours" id="colours">
+            <option value="black">Black</option>
+            <option value="white">White</option>
+          </select>
+          
+          <label for="Quantity">Quantity:</label>
+          <input type="text" id="quantity" name="quantity">
+          </form>
+                
+        <!--Cart.create(user_id:1, product_id:<%=@product.id%>, colour:document.getElementById("colours"), size:document.getElementById("sizes"), quantity:document.getElementById("quantity"))-->
+        
+      
+
   </div>
   </div>
 </main>
