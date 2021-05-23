@@ -1,0 +1,39 @@
+<h1>Your Cart</h1>
+<div class="center">
+  <%@carts.each do |item| %>
+    <%path = "/products/" + String(item.product_id)%>
+    <div class="grid-container">
+      <div class="grid-item">
+        <a href=<%=path%>>
+          <div class="card">
+        <div class="center">
+        <img width="300" height= "300" class="center" src=<%=item.product.imageSource%> >
+      <div class="center">
+        <b><%=item.product.name%></b>
+      </div>
+      </a>
+      <div>
+        <p class = "center">$<%=item.product.price%></p>
+        <p><%=item.product.description%></p>
+        <input id= <%=item.product.id%> type="button" onclick="myFunction(<%=item.product.id%>, this);"/>
+        <script>
+          if (localStorage.getItem(<%=item.product.id%>) !== null){
+            document.getElementById(<%=item.product.id%>).value = "Saved";
+            document.getElementById(<%=item.product.id%>).style.color = "blue";
+          }
+          else
+          {
+            document.getElementById(<%=item.product.id%>).value = "+";
+          }
+        </script>
+        <!--<input type="button" value = "Add to Cart"/>-->
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+<%end%>
+</div>
+<br>
+
+<%= link_to 'New Cart', new_cart_path %>
