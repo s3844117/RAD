@@ -8,6 +8,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+<%if session[:user_id]
+  @user = User.find(session[:user_id])
+end%>
 
 <nav class="navbar navbar-light" style="background-color: #B482FD;">
     <a class="navbar-brand" href="/">
@@ -57,6 +60,9 @@
           <img src="images/shopping-cart.png" alt="" width="30" height="30">
         </a>
         <br/>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/<%=@user.id%>">Profile </a>
+        </li>
         <%= "Logged in as #{current_user.name}" %> <%= button_to 'Log Out', logout_path, method: :delete%>
         </div>
     <% else %>

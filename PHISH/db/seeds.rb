@@ -26,6 +26,8 @@ Woman.create(product_id: 6)
 
 Kid.create(product_id: 4)
 
+User.create(name:'RAD', email:'rad2021rmit@gmail.com', password:'Rails2021');
+
 
 def new_arrivals()
     @date = Date.today

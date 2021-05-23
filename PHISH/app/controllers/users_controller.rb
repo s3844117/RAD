@@ -1,34 +1,69 @@
 class UsersController < ApplicationController
-# ----- add these lines here: -----
+  before_action :set_user, only: %i[ show edit update destroy ]
 
+  # GET /users or /users.json
+  def index
+    @users = User.all
+  end
+
+  # GET /users/1 or /users/1.json
+  def show
+  end
+
+  # GET /users/new
   def new
     @user = User.new
   end
 
+  # GET /users/1/edit
+  def edit
+  end
+
+  # POST /users or /users.json
   def create
     @user = User.new(user_params)
-    
-    # store all emails in lowercase to avoid duplicates and case-sensitive login errors:
-    @user.email.downcase!
-    
-    if @user.save
-      # If user saves in the db successfully:
-      flash[:notice] = "Account created successfully!"
-      redirect_to root_path
-    else
-      # If user fails model validation - probably a bad password or duplicate email:
-      flash.now.alert = "Oops, couldn't create account. Please make sure you are using a valid email and password and try again."
-      render :new
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: "User was successfully created." }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-private
-
-  def user_params
-    # strong parameters - whitelist of allowed fields #=> permit(:name, :email, ...)
-    # that can be submitted by a form to the user model #=> require(:user)
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  # PATCH/PUT /users/1 or /users/1.json
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: "User was successfully updated." }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
-  
-# ----- end of added lines -----
+
+  # DELETE /users/1 or /users/1.json
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = User.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def user_params
+      params.require(:user).permit(:name, :email, :password)
+    end
 end

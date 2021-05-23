@@ -5,10 +5,19 @@ Rails.application.routes.draw do
   resources :men
   resources :women
   resources :newsletters
+  resources :users
 
 
-	get 'users/new' => 'users#new', as: :new_user
+	get 'users/new' => 'users#new'
+	get 'users' => 'users#index'
 	post 'users' => 'users#create'
+
+  # post 'user/profile' => 'users#update'
+	
+	get 'users/:1' => 'users#show'
+	
+	get 'users/edit' => 'users#edit'
+	post 'users/edit' => 'users#update'
 	
 	post 'products' => 'products/#add_to_cart'
 	
