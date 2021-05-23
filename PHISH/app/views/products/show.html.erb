@@ -1,6 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
@@ -48,7 +45,8 @@
       <p><%=@product.description%></p>
       <p>$<%=@product.price%></p>
     </div>
-    <div class = "container">
+    <div class = "grid-container">
+      <div class = "grid-item">
     <input id= <%=@product.id%> type="button" onclick="myFunction(<%=@product.id%>, this);"/>
         <script>
           if (localStorage.getItem(<%=@product.id%>) !== null){
@@ -57,34 +55,18 @@
           }
           else
           {
-            document.getElementById(<%=@product.id%>).value = "+";
+            document.getElementById(<%=@product.id%>).value = "Add to save List +";
           }
         </script>
-        
-        
-        <form method="post" action="/product#add_to_cart">
-          <label for="sizes">Size:</label>
-          <select name="sizes" id="sizes">
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-          </select>
-          
-          <label for="colours">Colour:</label>
-          <select name="colours" id="colours">
-            <option value="black">Black</option>
-            <option value="white">White</option>
-          </select>
-          
-          <label for="Quantity">Quantity:</label>
-          <input type="text" id="quantity" name="quantity">
-          </form>
-                
-        <!--Cart.create(user_id:1, product_id:<%=@product.id%>, colour:document.getElementById("colours"), size:document.getElementById("sizes"), quantity:document.getElementById("quantity"))-->
-        
-      
-
-  </div>
+      </div>
+      <br>
+      <%@current_user = session[:user_id]%>
+      <div class= "grid-item">
+        <%@cart = Cart.new(product_id: @product.id, user_id: @current_user)%>
+        <%= render 'carts/form', cart: @cart%>
+      </div>
+      </div>
+    </div>
   </div>
 </main>
 

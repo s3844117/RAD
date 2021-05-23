@@ -1,4 +1,4 @@
-class Kid < ApplicationRecord
+class Cart < ApplicationRecord
     belongs_to :product
     validates :product_id, uniqueness: { case_sensitive: false }
 end
