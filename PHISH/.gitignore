@@ -21,4 +21,4 @@
 .byebug_history
 
 # Ignore .env used for storing keys and access tokens
-.env
+/config/environment.rb

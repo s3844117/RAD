@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   resources :men
   resources :women
   resources :newsletters
-  
-  get 'users/new' => 'users#new', as: :new_user
+
+
+	get 'users/new' => 'users#new', as: :new_user
 	post 'users' => 'users#create'
+	
+	# ----- add these lines here: -----
 	
 	# log in page with form:
 	get '/login'     => 'sessions#new'
@@ -16,9 +19,11 @@ Rails.application.routes.draw do
 	post '/login'    => 'sessions#create'
 	
 	# delete action to log out:
-  get '/logout' => 'sessions#destroy'  
+	delete '/logout' => 'sessions#destroy'  
+  	
+  	# ----- end of added lines -----
   
-   get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#createTwitter'
 
   
   # get 'home/about'

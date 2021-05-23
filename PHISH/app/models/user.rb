@@ -1,8 +1,5 @@
 class User < ApplicationRecord
-    
-    has_secure_password
      
-        
     validates :name, presence: true
     EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, format: { with: EMAIL_FORMAT }, uniqueness: true
@@ -18,9 +15,10 @@ class User < ApplicationRecord
 
     def self.create_with_omniauth(auth)
         create! do |user|
-            # user.email = auth["provider"]
-            user.email = auth["uid"]
+            user.email = auth["uid"] + "@twitteracc.not"
             user.name = auth["info"]["name"]
+            user.password = auth["info"]["name"]
         end
     end
+    
 end
