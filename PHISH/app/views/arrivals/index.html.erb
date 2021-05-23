@@ -1,31 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Women</h1>
+<h1>New Arrivals</h1>
 
 <div class="center">
-<% @women.each do |woman| %>
-<%path = "/products/" + String(woman.product_id)%>
+<% @arrivals.each do |product| %>
+<%path = "/products/" + String(product.product_id)%>
   <div class="grid-container">
   <div class="grid-item">
     <a href=<%=path%>><div class="card">
       <div class="center">
-      <img width="300" height= "300" class="center" src=<%=woman.product.imageSource%> >
+      <img width="300" height= "300" class="center" src=<%=product.product.imageSource%> >
       <div class="center">
-        <b><%=woman.product.name%></b>
+        <b><%=product.product.name%></b>
       </div>
       </a>
       <div>
-        <p class = "center">$<%=woman.product.price%></p>
-        <p><%=woman.product.description%></p>
-        <input id= <%=woman.product.id%> type="button" onclick="myFunction(<%=woman.product.id%>, this);" />
+        <p class = "center">$<%=product.product.price%></p>
+        <p><%=product.product.description%></p>
+        <input id= <%=product.product.id%> type="button" onclick="myFunction(<%=product.product.id%>, this);" />
         <script>
-          if (localStorage.getItem(<%=woman.product.id%>) !== null){
-            document.getElementById(<%=woman.product.id%>).value = "Saved";
-            document.getElementById(<%=woman.product.id%>).style.color = "blue";
+          if (localStorage.getItem(<%=product.product.id%>) !== null){
+            document.getElementById(<%=product.product.id%>).value = "Saved";
+            document.getElementById(<%=product.product.id%>).style.color = "blue";
           }
           else
           {
-            document.getElementById(<%=woman.product.id%>).value = "+";
+            document.getElementById(<%=product.product.id%>).value = "+";
           }
         </script>
         <input type="button" value = "Add to Cart"/>
@@ -55,3 +55,7 @@
     }
     }; 
 </script>
+
+<br>
+
+<%= link_to 'New Arrival', new_arrival_path %>

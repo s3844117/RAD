@@ -2,6 +2,47 @@
 
 <h1>Products</h1>
 
+<nav>
+      <a class="nav-link" href="/men">Mens</a>
+      <a class="nav-link" href="/women">Womens</a>
+      <a class="nav-link" href="/kids">Kids</a>
+</nav>
+
+<div class="center">
+  <%@products.each do |item| %>
+    <%path = "/products/" + String(item.id)%>
+    <div class="grid-container">
+      <div class="grid-item">
+        <a href=<%=path%>>
+          <div class="card">
+        <div class="center">
+        <img width="300" height= "300" class="center" src=<%=item.imageSource%> >
+      <div class="center">
+        <b><%=item.name%></b>
+      </div>
+      </a>
+      <div>
+        <p class = "center">$<%=item.price%></p>
+        <p><%=item.description%></p>
+        <input id= <%=item.id%> type="button" onclick="myFunction(<%=item.id%>, this);"/>
+        <script>
+          if (localStorage.getItem(<%=item.id%>) !== null){
+            document.getElementById(<%=item.id%>).value = "Saved";
+            document.getElementById(<%=item.id%>).style.color = "blue";
+          }
+          else
+          {
+            document.getElementById(<%=item.id%>).value = "+";
+          }
+        </script>
+        <input type="button" value = "Add to Cart"/>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+<%end%>
+</div>
 <script>
       function myFunction(x, elmnt){
       if (localStorage.getItem(x) !== null){
@@ -18,40 +59,6 @@
     }
     }; 
 </script>
-<nav>
-      <a class="nav-link" href="/men">Mens</a>
-      <a class="nav-link" href="/women">Womens</a>
-      <a class="nav-link" href="/kids">Kids</a>
-</nav>
-
-<% @products.each do |product| %>
-  <div class="grid-container">
-  <div class="grid-item">
-    <div class="card">
-      <img src=<%=product.imageSource%> alt ="" class="center" width="300" height= "300" >
-      <div class="center">
-        <h2><%=product.name%></h2>
-        <p class="price">$<%=product.price%></p>
-        <p><%=product.description%></p>
-        <input id= <%=product.id%> type="button" onclick="myFunction(<%=product.id%>, this);" />
-        <script>
-          if (localStorage.getItem(<%=product.id%>) !== null){
-            document.getElementById(<%=product.id%>).value = "Saved";
-            document.getElementById(<%=product.id%>).style.color = "blue";
-          }
-          else
-          {
-            document.getElementById(<%=product.id%>).value = "+";
-          }
-        </script>
-        <input type="button" value = "Add to Cart"/>
-      </div>
-    </div>
-  </div>
-  </div>
-<%end%>
-
-
 <br>
 
 <%= link_to 'New Product', new_product_path %>

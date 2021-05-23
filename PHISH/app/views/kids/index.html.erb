@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Kids</h1>
 
+
+<h1>Kids</h1>
 <div class="center">
-<% @kids.each do |kid| %>
+<%@kids.each do |kid| %>
 <%path = "/products/" + String(kid.product_id)%>
   <div class="grid-container">
   <div class="grid-item">
@@ -34,17 +35,11 @@
   </div>
   </div>
   </div>
-        <td><%= kid.product_id%></td>
-        <td><%= link_to 'Show', path %></td>
-        <td><%= link_to 'Edit', edit_kid_path(kid) %></td>
-        <td><%= link_to 'Destroy', kid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <tr>
 <%end%>
 </div>
 
 <br>
 
-<%= link_to 'New Kid', new_kid_path %>
 <script>
       function myFunction(x, elmnt){
       if (localStorage.getItem(x) !== null){

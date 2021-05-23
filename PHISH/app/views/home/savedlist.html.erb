@@ -1,12 +1,13 @@
 <h1>Saved Items</h1>
 
     <script>
-        var html = "<div>";
+        var html = '<div>';
         var count = 0;
     </script>
     <%@products = Product.all%>
     <div class="center">
     <%@products.each do |product|%>
+        <div class = "grid-container">
         <div class="grid-item" id = "products">
         <%path = "/products/" + String(product.id)%>
         <script>
@@ -24,9 +25,8 @@
             {
                 if(<%=product.id%> == array[i])
                 {
-                    window.html += '<a href=<%=path%>><div class="card">' + '<div class ="center">'+'<img class="center" width="300" height= "300" src=<%=product.imageSource%> >' + 
-                    '<div class="center">' + '<b><%=product.name%></b> </div></a>' + '<p class="price">$<%=product.price%></p>' + '<p><%=product.description%></p>'+ 
-                    '<input id=<%= product.id%> type="button" onclick="myFunction(<%=product.id%>, this);" value = "Saved" style= "color: blue"/>' + '<input type="button" value = "Add to Cart"/>' + '</div>' + '</div> </div>';
+                    window.html += '<a href=<%=path%>><div class="card">'+'<div class="center"><img width="300" height= "300" class="center" src=<%=product.imageSource%> >'+'<div class="center">'+
+        '<b><%=product.name%></b>'+'</div></a>'+'<div><p class = "center">$<%=product.price%></p><p><%=product.description%></p>'+'<input id=<%= product.id%> type="button" onclick="myFunction(<%=product.id%>, this);" value = "Saved" style= "color: blue"/>' + '<input type="button" value = "Add to Cart"/>' + '</div>' + '</div> </div>';
                 }
             }
             }
@@ -37,8 +37,7 @@
     </div>
     </div>
     <%end%>
-    </div>
-
+</div>
 
 <script>
       function myFunction(x, elmnt){
