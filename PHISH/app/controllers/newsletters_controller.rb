@@ -12,11 +12,15 @@ class NewslettersController < ApplicationController
 
   # GET /newsletters/new
   def new
-    @newsletter = Newsletter.new
+    @newsletter = Newsletter.new(newsletter_params)
   end
 
   # GET /newsletters/1/edit
   def edit
+  end
+  
+  def subscribe
+    @newsletter = Newsletter.create_subsciption(@current_user)
   end
 
   # POST /newsletters or /newsletters.json
@@ -53,7 +57,7 @@ class NewslettersController < ApplicationController
   def destroy
     @newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to newsletters_url, notice: "Subscriber was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Subscriber was successfully destroyed." }
       format.json { head :no_content }
     end
   end

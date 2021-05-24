@@ -1,7 +1,7 @@
 <h1>Your Cart</h1>
 <div class="center">
   <%@carts.each do |item| %>
-  <%if (item.user_id == @userid) %>
+  
     <%path = "/products/" + String(item.product_id)%>
     <div class="grid-container">
       <div class="grid-item">
@@ -33,7 +33,6 @@
   </div>
   </div>
   </div>
-  <%end%>
 <%end%>
 </div>
 <br>
