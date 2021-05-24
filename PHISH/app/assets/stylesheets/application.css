@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+/* @import "bootstrap"; */
 
 footer {
   margin-top: 45px;

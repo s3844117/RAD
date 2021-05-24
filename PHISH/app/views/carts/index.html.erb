@@ -14,12 +14,9 @@
     <label class="product-line-price">Total</label>
   </div>
 
-<div>
-<%@carts.each do |item| %>
-  <%if (item.user_id == @user.id) %>
-<div class="center">
+
   <%@carts.each do |item| %>
-  
+     <%if (item.user_id == @user.id) %>
     <%path = "/products/" + String(item.product_id)%>
   <div class="product">
     <a href=<%=path%>>
@@ -36,16 +33,13 @@
     <div class="product-price"><%=item.product.price%></div>
     <div class="product-quantity"><%=item.quantity%></div>
     <div class="product-removal">
-      <button class="remove-product" <%= button_to 'Remove', Cart.find_by(id: item.id) , method: :destroy, data: { confirm: 'Are you sure?' } %>
-      </button>
+      <%= button_to 'Remove', Cart.find_by(id: item.id) , method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     <div class="product-line-price"><%=item.product.price * item.quantity%></div>
   </div>
-  </div>
-
-
 <%end%>
 <%end%>
+
   <div class="totals">
     <div class="totals-item">
       <label>Grand Total</label>
@@ -57,9 +51,8 @@
       <%end%>
         <div class="totals-value" id="cart-subtotal"><%=@total%></div>
     </div>
-    
+    <button class="checkout">Checkout</button>
+    <div>
   </div>
-
-      <button class="checkout">Checkout</button>
+  </div>
 </div>
-

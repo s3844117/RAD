@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     
       if user && user.authenticate(params[:login][:password]) 
         # Save the user.id in that user's session cookie:
-        session[:user_id] = user.id.to_s
+        session[:user_id] = user.id
         redirect_to root_path, notice: 'Successfully logged in!'
       else
         flash.now.alert = "Incorrect email or password, try again."
@@ -34,6 +34,7 @@ class SessionsController < ApplicationController
         redirect_to root_path, notice: 'Successfully logged in!'
       else
         User.create_with_omniauth(auth)
+        user = User.find_by(email: (auth["uid"] + "@twitteracc.not"))
         session[:user_id] = user.id
         redirect_to root_path, notice: 'Successfully logged in!'
         

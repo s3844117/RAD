@@ -5,11 +5,13 @@
 <br>
 <br>
 
-<%popular = Product.where(popularityScore: 5..Float::INFINITY)%> 
-<%@popular = popular.order('popularityScore DESC')%>
+<%# <%popular = Product.where((popularityScore): 5..Float::INFINITY)) %> 
+<%# <%@popular = popular.order('popularityScore DESC')%> 
+<% @popular = Product.where(popularityScore: 5..100) %>
+
 <h2>Popular Items</h2>
 <div class="center">
-  <%@popular.each do |item| %>
+  <%@popular.each do |item|%>
     <%path = "/products/" + String(item.id)%>
     <div class="grid-container">
       <div class="grid-item">

@@ -24,7 +24,7 @@ end%>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <% if current_user %>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <div class="dropdown">
             <span>Shop</span>
@@ -36,34 +36,15 @@ end%>
               <a class="nav-link" href="/arrivals">New Arrivals</a>
             </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/faqs">FAQs</a>
-        </li>
-      </ul>
+        </ul>
         
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-          </span>
-        </div>
         <br/>
-        <a class="navbar-shoppingCart" href="/carts">
-          <img src="images/shopping-cart.png" alt="" width="30" height="30">
-        </a>
+        <a class="nav-link" href="/carts"> Shopping Cart</a>
         <br/>
         <%= "Logged in as #{current_user.name}" %> <%= button_to 'Log Out', logout_path, method: :delete%>
         </div>
     <% else %>
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <div class="dropdown">
             <span>Shop</span>
             <div class="dropdown-content">
@@ -73,30 +54,11 @@ end%>
               <a class="nav-item" href="/products">Shop All</a>
               <a class="nav-link" href="/arrivals">New Arrivals</a>
             </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/faqs">FAQs</a>
-        </li>
-    </ul>
-        
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-          </span>
-        </div>
+      </ul>
         <br/>
         <%= link_to 'Log In', login_path %>  or <%= link_to 'Sign Up', new_user_path %> or <%=link_to "Sign in with Twitter", "/auth/twitter", method: :post%>
         <br/>
-        <a class="navbar-brand" href="/">By MAKITA n SIMON</a>
+        <a class="navbar-brand" href="/">By NAKITA and SIMON</a>
       
     </div>
   <% end %>

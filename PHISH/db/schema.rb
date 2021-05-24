@@ -10,66 +10,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210523120238) do
+ActiveRecord::Schema.define(version: 2021_05_23_120238) do
 
-  create_table "arrivals", force: :cascade do |t|
-    t.integer  "product_id"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "arrivals", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "carts", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "user_id"
-    t.string   "size"
-    t.string   "colour"
-    t.integer  "quantity"
+  create_table "carts", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+    t.string "size"
+    t.string "colour"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "kids", force: :cascade do |t|
-    t.integer  "product_id"
+  create_table "kids", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "men", force: :cascade do |t|
-    t.integer  "product_id"
+  create_table "men", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "newsletters", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
+  create_table "newsletters", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.float    "price"
-    t.string   "description"
-    t.float    "popularityScore"
-    t.string   "imageSource"
-    t.date     "stockDate"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "imageSource2"
-    t.string   "imageSource3"
+  create_table "products", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.string "description"
+    t.float "popularityScore"
+    t.string "imageSource"
+    t.date "stockDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "imageSource2"
+    t.string "imageSource3"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "women", force: :cascade do |t|
-    t.integer  "product_id"
+  create_table "women", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
