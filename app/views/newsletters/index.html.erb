@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Newsletter Subscribers</h1>
+
+<table>
+    <thead>
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newsletters.each do |newsletter| %>
+      <tr>
+        <td><%= link_to newsletter.name, newsletter %></td>
+        <td><%= newsletter.email %></td>
+        <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
+        <td><%= link_to 'Delete', newsletter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

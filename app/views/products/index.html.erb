@@ -1,0 +1,61 @@
+<h1>Products</h1>
+
+<nav>
+      <a class="nav-link" href="/men">Mens</a>
+      <a class="nav-link" href="/women">Womens</a>
+      <a class="nav-link" href="/kids">Kids</a>
+</nav>
+
+<div class="center">
+  <%@products.each do |item| %>
+    <%path = "/products/" + String(item.id)%>
+    <div class="grid-container">
+      <div class="grid-item">
+        <a href=<%=path%>>
+          <div class="card">
+        <div class="center">
+        <img width="300" height= "300" class="center" src=<%=item.imageSource%> >
+      <div class="center">
+        <b><%=item.name%></b>
+      </div>
+      </a>
+      <div>
+        <p class = "center">$<%=item.price%></p>
+        <p><%=item.description%></p>
+        <input id= <%=item.id%> type="button" onclick="myFunction(<%=item.id%>, this);"/>
+        <script>
+          if (localStorage.getItem(<%=item.id%>) !== null){
+            document.getElementById(<%=item.id%>).value = "Saved";
+            document.getElementById(<%=item.id%>).style.color = "blue";
+          }
+          else
+          {
+            document.getElementById(<%=item.id%>).value = "+";
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+<%end%>
+</div>
+<script>
+      function myFunction(x, elmnt){
+      if (localStorage.getItem(x) !== null){
+      alert("Removing product " + x + " from saved list");
+      localStorage.removeItem(JSON.stringify(x));
+      elmnt.value = '+';
+      elmnt.style.color = 'black';
+    }
+    else{
+      alert("Product saved with id " + x);
+      localStorage.setItem(JSON.stringify(x), JSON.stringify(x));
+      elmnt.value = 'Saved';
+      elmnt.style.color = 'blue';
+    }
+    }; 
+</script>
+<br>
+
+<%= link_to 'New Product', new_product_path %>
