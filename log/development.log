@@ -1,0 +1,350 @@
+Started GET "/" for 120.148.161.115 at 2021-05-24 06:36:02 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.7.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.7.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.4ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.6ms)
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateWomen (20210515112732)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "women" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210515112732"]]
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMen (20210515113009)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "men" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210515113009"]]
+  [1m[35m (22.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateKids (20210515114630)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "kids" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210515114630"]]
+  [1m[35m (17.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProducts (20210516030628)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" float, "description" varchar, "popularityScore" float, "imageSource" varchar, "stockDate" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210516030628"]]
+  [1m[35m (20.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateNewsletters (20210521120358)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "newsletters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210521120358"]]
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddImageLinksToProducts (20210522014122)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "products" ADD "imageSource2" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "products" ADD "imageSource3" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210522014122"]]
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20210522072505)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210522072505"]]
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateArrivals (20210522101912)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "arrivals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210522101912"]]
+  [1m[35m (17.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCarts (20210523120238)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "user_id" integer, "size" varchar, "colour" varchar, "quantity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210523120238"]]
+  [1m[35m (21.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-24 06:36:14.353932"], ["updated_at", "2021-05-24 06:36:14.353932"]]
+  [1m[35m (19.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "popularityScore", "imageSource", "stockDate", "created_at", "updated_at", "imageSource2", "imageSource3") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Phish Ramen Shirt"], ["price", 10.0], ["description", "Shirt with Fish Ramen"], ["popularityScore", 10.0], ["imageSource", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/white-fish-ramen-mens-tshirt_1800x1800.jpg?v=1594096848"], ["stockDate", "2021-05-22"], ["created_at", "2021-05-24 06:36:19.835035"], ["updated_at", "2021-05-24 06:36:19.835035"], ["imageSource2", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/black-fish-ramen-mens-tshirt_1800x1800.jpg?v=1594096848"], ["imageSource3", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/white-fish-ramen_1800x1800.jpg?v=1594096848"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "popularityScore", "imageSource", "stockDate", "created_at", "updated_at", "imageSource2", "imageSource3") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cat Phish Shirt"], ["price", 30.0], ["description", "Shirt with cat in fish costume"], ["popularityScore", 8.0], ["imageSource", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/natural-catfish-yokai-mens-tshirt_1800x1800.jpg?v=1597984311"], ["stockDate", "2021-05-22"], ["created_at", "2021-05-24 06:36:19.844728"], ["updated_at", "2021-05-24 06:36:19.844728"], ["imageSource2", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/white-catfish-yokai-mens-tshirt_1800x1800.jpg?v=1597984311"], ["imageSource3", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/natural-catfish-yokai_1800x1800.jpg?v=1597984311"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "popularityScore", "imageSource", "stockDate", "created_at", "updated_at", "imageSource2", "imageSource3") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Puffer Phish"], ["price", 25.0], ["description", "Shirt with a puffer fish pun"], ["popularityScore", 9.0], ["imageSource", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/black-dont-be-a-prick-mens-tshirt_1800x1800.jpg?v=1596512501"], ["stockDate", "2021-02-22"], ["created_at", "2021-05-24 06:36:19.849647"], ["updated_at", "2021-05-24 06:36:19.849647"], ["imageSource2", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/navy-dont-be-a-prick-mens-tshirt_1800x1800.jpg?v=1596512502"], ["imageSource3", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/navy-dont-be-a-prick_1800x1800.jpg?v=1596512502"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "popularityScore", "imageSource", "stockDate", "created_at", "updated_at", "imageSource2", "imageSource3") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Blue Tang Phish"], ["price", 15.0], ["description", "Shirt with Dory from Finding Nemo"], ["popularityScore", 5.0], ["imageSource", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/mens-blue-save-the-ocean-tshirt_1800x1800.jpg?v=1575267169"], ["stockDate", "2021-01-22"], ["created_at", "2021-05-24 06:36:19.856490"], ["updated_at", "2021-05-24 06:36:19.856490"], ["imageSource2", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/womens-blue-save-the-ocean-tshirt_1800x1800.jpg?v=1575267186"], ["imageSource3", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/save-the-ocean-tshirt-kids-blue_1800x1800.jpg?v=1575343530"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "popularityScore", "imageSource", "stockDate", "created_at", "updated_at", "imageSource2", "imageSource3") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Shark Hoodie"], ["price", 45.0], ["description", "Hoodie with shark eating ice-cream"], ["popularityScore", 3.0], ["imageSource", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/white-shark-and-ice-cream-hoodie_1800x1800.jpg?v=1605847044"], ["stockDate", "2021-01-22"], ["created_at", "2021-05-24 06:36:19.861406"], ["updated_at", "2021-05-24 06:36:19.861406"], ["imageSource2", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/blue-shark-and-ice-cream-hoodie_1800x1800.jpg?v=1605847044"], ["imageSource3", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/white-shark-and-ice-cream_5df11050-a3ff-4439-a46c-883506ea33ed_1800x1800.jpg?v=1605847044"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "popularityScore", "imageSource", "stockDate", "created_at", "updated_at", "imageSource2", "imageSource3") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Koi Phish Hoodie"], ["price", 50.0], ["description", "Hoodie with Koi Fish"], ["popularityScore", 6.0], ["imageSource", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/white-japanese-carp-hoodie_1800x1800.jpg?v=1608094257"], ["stockDate", "2021-05-22"], ["created_at", "2021-05-24 06:36:19.868187"], ["updated_at", "2021-05-24 06:36:19.868187"], ["imageSource2", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/grey-japanese-carp-hoodie_1800x1800.jpg?v=1608094257"], ["imageSource3", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/white-japanese-carp_b2d17f46-3d1b-43ee-bf5b-ba97e6d22909_1800x1800.jpg?v=1608094257"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "popularityScore", "imageSource", "stockDate", "created_at", "updated_at", "imageSource2", "imageSource3") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Phising Long Sleeve"], ["price", 15.0], ["description", "Long sleeve fishing shirt"], ["popularityScore", 4.0], ["imageSource", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/black-lets-go-fishing-mens-long-sleeve_1800x1800.jpg?v=1615354504"], ["stockDate", "2021-05-22"], ["created_at", "2021-05-24 06:36:19.873649"], ["updated_at", "2021-05-24 06:36:19.873649"], ["imageSource2", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/white-lets-go-fishing-mens-long-sleeve_1800x1800.jpg?v=1615354504"], ["imageSource3", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/black-lets-go-fishing_6fddd4a6-4662-426d-8f1a-f7c3280a9cb3_1800x1800.jpg?v=1615354504"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "description", "popularityScore", "imageSource", "stockDate", "created_at", "updated_at", "imageSource2", "imageSource3") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jellyphish Sweatshirt"], ["price", 30.0], ["description", "Sweatshirt with jelly fish"], ["popularityScore", 4.0], ["imageSource", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/mens-black-universe-is-a-big-jellyfish-long-sleeve_1800x1800.jpg?v=1578456947"], ["stockDate", "2021-05-22"], ["created_at", "2021-05-24 06:36:19.880730"], ["updated_at", "2021-05-24 06:36:19.880730"], ["imageSource2", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/womens-black-universe-is-a-big-jellyfish-long-sleeve_1800x1800.jpg?v=1578456947"], ["imageSource3", "https://cdn.shopify.com/s/files/1/0045/7349/5389/products/universe-is-a-big-jellyfish-design_c076a70a-1bcf-489a-a258-74f0d8f9ebb6_1800x1800.jpg?v=1578456947"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMan Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "men" WHERE LOWER("men"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "men" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 1], ["created_at", "2021-05-24 06:36:19.909928"], ["updated_at", "2021-05-24 06:36:19.909928"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMan Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "men" WHERE LOWER("men"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "men" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 2], ["created_at", "2021-05-24 06:36:19.920965"], ["updated_at", "2021-05-24 06:36:19.920965"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mMan Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "men" WHERE LOWER("men"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "men" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 3], ["created_at", "2021-05-24 06:36:19.927666"], ["updated_at", "2021-05-24 06:36:19.927666"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMan Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "men" WHERE LOWER("men"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "men" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 4], ["created_at", "2021-05-24 06:36:19.938735"], ["updated_at", "2021-05-24 06:36:19.938735"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWoman Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "women" WHERE LOWER("women"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "women" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 4], ["created_at", "2021-05-24 06:36:19.958441"], ["updated_at", "2021-05-24 06:36:19.958441"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mWoman Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "women" WHERE LOWER("women"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "women" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 5], ["created_at", "2021-05-24 06:36:19.965846"], ["updated_at", "2021-05-24 06:36:19.965846"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mWoman Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "women" WHERE LOWER("women"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "women" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 6], ["created_at", "2021-05-24 06:36:19.972945"], ["updated_at", "2021-05-24 06:36:19.972945"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mKid Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "kids" WHERE LOWER("kids"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "kids" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 4], ["created_at", "2021-05-24 06:36:19.991488"], ["updated_at", "2021-05-24 06:36:19.991488"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rad2021rmit@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "RAD"], ["email", "rad2021rmit@gmail.com"], ["password_digest", "$2a$12$TgFiaKG64/QNjg77JQQ/Mu8zOtrcoBQmi9Qsmyjclma72WOydM7Uy"], ["created_at", "2021-05-24 06:36:20.324249"], ["updated_at", "2021-05-24 06:36:20.324249"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArrival Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "arrivals" WHERE LOWER("arrivals"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "arrivals" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 1], ["created_at", "2021-05-24 06:36:20.350563"], ["updated_at", "2021-05-24 06:36:20.350563"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArrival Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "arrivals" WHERE LOWER("arrivals"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "arrivals" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 2], ["created_at", "2021-05-24 06:36:20.365191"], ["updated_at", "2021-05-24 06:36:20.365191"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mArrival Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "arrivals" WHERE LOWER("arrivals"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "arrivals" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 6], ["created_at", "2021-05-24 06:36:20.399313"], ["updated_at", "2021-05-24 06:36:20.399313"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mArrival Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "arrivals" WHERE LOWER("arrivals"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "arrivals" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 7], ["created_at", "2021-05-24 06:36:20.406035"], ["updated_at", "2021-05-24 06:36:20.406035"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mArrival Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "arrivals" WHERE LOWER("arrivals"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "arrivals" ("product_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["product_id", 8], ["created_at", "2021-05-24 06:36:20.413142"], ["updated_at", "2021-05-24 06:36:20.413142"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 120.148.161.115 at 2021-05-24 06:36:25 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_topbanner.html.erb (15.0ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE ("products"."popularityScore" >= ?) ORDER BY popularityScore DESC[0m  [["popularityScore", 5.0]]
+  Rendered home/index.html.erb within layouts/application (20.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_headerbar.html.erb (25.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 1552ms (Views: 1548.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products/7" for 120.148.161.115 at 2021-05-24 06:36:29 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered carts/_form.html.erb (12.9ms)
+  Rendered products/show.html.erb within layouts/application (23.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_headerbar.html.erb (5.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 117ms (Views: 113.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/images/shopping-cart.png" for 120.148.161.115 at 2021-05-24 06:36:29 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/products/images/shopping-cart.png"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [79 times] (26.1ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.5ms)
+Started POST "/carts" for 120.148.161.115 at 2021-05-24 06:36:31 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TCj14/bl5AdZnVM5ys22uPdPwGiMfR/Pgbmwgtl24IMpMpvhBgZERHQbIjwz5LF+jyCLF1VLP9bjXpisggtfXw==", "cart"=>{"product_id"=>"7", "user_id"=>"1", "size"=>"Small", "colour"=>"Black", "quantity"=>"1"}, "commit"=>"Add to Cart"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCart Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "carts" WHERE LOWER("carts"."product_id") = LOWER(?) LIMIT ?[0m  [["product_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "carts" ("product_id", "user_id", "size", "colour", "quantity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["product_id", 7], ["user_id", 1], ["size", "Small"], ["colour", "Black"], ["quantity", 1], ["created_at", "2021-05-24 06:36:31.387350"], ["updated_at", "2021-05-24 06:36:31.387350"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://394d5ddc57304b5aafe260abcb4131a0.vfs.cloud9.us-east-1.amazonaws.com/carts
+Completed 302 Found in 31ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/carts" for 120.148.161.115 at 2021-05-24 06:36:31 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/index.html.erb within layouts/application (8.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_headerbar.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 83ms (Views: 80.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/carts" for 120.148.161.115 at 2021-05-24 06:36:56 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/index.html.erb within layouts/application (8.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_headerbar.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 73ms (Views: 72.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carts" for 120.148.161.115 at 2021-05-24 06:37:04 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/index.html.erb within layouts/application (9.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_headerbar.html.erb (5.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 86ms (Views: 84.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/carts" for 120.148.161.115 at 2021-05-24 06:37:22 +0000
+Cannot render console from 120.148.161.115! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/index.html.erb within layouts/application (8.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_headerbar.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.4ms)
+
+
