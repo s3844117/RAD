@@ -40,3 +40,5 @@ group :production do
   #use PostGreSQL when deploying to heroku
   gem 'pg'
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

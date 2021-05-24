@@ -5,8 +5,8 @@
 <br>
 <br>
 
-<%popular = Product.where(popularityScore: 5..Float::INFINITY)%> 
-<%@popular = popular.order('popularityScore DESC')%>
+<%@popular = Product.where(popularityScore: 5..Float::INFINITY)%> 
+
 <h2>Popular Items</h2>
 <div class="center">
   <%@popular.each do |item| %>
