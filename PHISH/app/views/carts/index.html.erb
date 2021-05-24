@@ -17,6 +17,9 @@
 <div>
 <%@carts.each do |item| %>
   <%if (item.user_id == @user.id) %>
+<div class="center">
+  <%@carts.each do |item| %>
+  
     <%path = "/products/" + String(item.product_id)%>
   <div class="product">
     <a href=<%=path%>>
@@ -38,6 +41,9 @@
     </div>
     <div class="product-line-price"><%=item.product.price * item.quantity%></div>
   </div>
+  </div>
+
+
 <%end%>
 <%end%>
   <div class="totals">

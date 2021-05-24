@@ -9,4 +9,11 @@ class Newsletter < ApplicationRecord
     
     # redirect_to(@Newsletter, :notice => 'Newsletter created')
 
+
+    def self.create_subsciption(user)
+        create! do |newsletter|
+            newsletter.name = user.name
+            newsletter.email = user.email
+        end
+    end
 end
