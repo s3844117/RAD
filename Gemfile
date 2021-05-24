@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
-# Use sqlite3 as the databasefor Active Record
-gem 'sqlite3', '~> 1.3.0'
+# Use sqlite3 as the databasefor Active Recor
 
 gem 'bootstrap-sass', '2.1'
 gem 'puma'
