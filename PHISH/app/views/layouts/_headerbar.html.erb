@@ -56,13 +56,10 @@ end%>
           </span>
         </div>
         <br/>
-        <a class="navbar-shoppingCart" href="#">
+        <a class="navbar-shoppingCart" href="/carts">
           <img src="images/shopping-cart.png" alt="" width="30" height="30">
         </a>
         <br/>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/<%=@user.id%>">Profile </a>
-        </li>
         <%= "Logged in as #{current_user.name}" %> <%= button_to 'Log Out', logout_path, method: :delete%>
         </div>
     <% else %>
@@ -97,9 +94,6 @@ end%>
           </span>
         </div>
         <br/>
-        <a class="navbar-shoppingCart" href="/">
-          <img src="images/shopping-cart.png" alt="" width="30" height="30">
-        </a>
         <%= link_to 'Log In', login_path %>  or <%= link_to 'Sign Up', new_user_path %> or <%=link_to "Sign in with Twitter", "/auth/twitter", method: :post%>
         <br/>
         <a class="navbar-brand" href="/">By MAKITA n SIMON</a>

@@ -4,6 +4,11 @@ class CartsController < ApplicationController
   # GET /carts or /carts.json
   def index
     @carts = Cart.all
+    if session[:user_id]
+        @userid = session[:user_id]
+    else
+        @userid = 0
+    end
   end
 
   # GET /carts/1 or /carts/1.json
@@ -60,6 +65,11 @@ class CartsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
       @cart = Cart.find(params[:id])
+      if session[:user_id]
+        @current_user = session[:user_id]
+      else
+        @current_user = 0
+      end
     end
 
     # Only allow a list of trusted parameters through.

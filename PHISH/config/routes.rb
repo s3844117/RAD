@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # post 'user/profile' => 'users#update'
 	
-	get 'users/:1' => 'users#show'
+# 	get 'users/' => 'users#show'
 	
 	get 'users/edit' => 'users#edit'
 	post 'users/edit' => 'users#update'
