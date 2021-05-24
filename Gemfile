@@ -37,14 +37,6 @@ gem "omniauth-rails_csrf_protection"
 # Font-Awesome, for custom icons
 gem 'font-awesome-rails'
 
-group :development, :test do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.3.0' 
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  # gem 'byebug', platform: :mri
-  # Used for ENV files to keep keys safe
-
-end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
