@@ -15,7 +15,6 @@ gem "mini_magick"
 gem "font-awesome-rails"
 gem 'bcrypt'
 
-gem 'pg'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
