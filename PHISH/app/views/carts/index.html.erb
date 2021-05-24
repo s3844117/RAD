@@ -1,40 +1,59 @@
 <h1>Your Cart</h1>
-<div class="center">
-  <%@carts.each do |item| %>
-  <%if (item.user_id == @userid) %>
-    <%path = "/products/" + String(item.product_id)%>
-    <div class="grid-container">
-      <div class="grid-item">
-        <a href=<%=path%>>
-          <div class="card">
-        <div class="center">
-        <img width="300" height= "300" class="center" src=<%=item.product.imageSource%> >
-      <div class="center">
-        <b><%=item.product.name%></b>
-      </div>
-      </a>
-      <div>
-        <p class = "center">$<%=item.product.price%></p>
-        <p><%=item.product.description%></p>
-        <input id= <%=item.product.id%> type="button" onclick="myFunction(<%=item.product.id%>, this);"/>
-        <script>
-          if (localStorage.getItem(<%=item.product.id%>) !== null){
-            document.getElementById(<%=item.product.id%>).value = "Saved";
-            document.getElementById(<%=item.product.id%>).style.color = "blue";
-          }
-          else
-          {
-            document.getElementById(<%=item.product.id%>).value = "+";
-          }
-        </script>
-        <!--<input type="button" value = "Add to Cart"/>-->
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  <%end%>
-<%end%>
-</div>
+<%@user = User.find(session[:user_id])%>
 <br>
+<br>
+<br>
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+<div>
+<%@carts.each do |item| %>
+  <%if (item.user_id == @user.id) %>
+    <%path = "/products/" + String(item.product_id)%>
+  <div class="product">
+    <a href=<%=path%>>
+    <div class="product-image">
+      <img class="center" src=<%=item.product.imageSource%> >
+    </div>
+    </a>
+    <div class="product-details">
+      <div class="product-title"><b><%=item.product.name%></b></div>
+      <p class="product-description"><%=item.product.description%></p>
+      <p class="product-description">Colour: <%=item.colour%></p>
+      <p class="product-description">Size: <%=item.size%></p>
+    </div>
+    <div class="product-price"><%=item.product.price%></div>
+    <div class="product-quantity"><%=item.quantity%></div>
+    <div class="product-removal">
+      <button class="remove-product" <%= button_to 'Remove', Cart.find_by(id: item.id) , method: :destroy, data: { confirm: 'Are you sure?' } %>
+      </button>
+    </div>
+    <div class="product-line-price"><%=item.product.price * item.quantity%></div>
+  </div>
+<%end%>
+<%end%>
+  <div class="totals">
+    <div class="totals-item">
+      <label>Grand Total</label>
+      <%@total = 0%>
+      <%@carts.each do |item| %>
+        <%if (item.user_id == @user.id) %>
+        <%@total = @total + (item.product.price * item.quantity)%>
+        <%end%>
+      <%end%>
+        <div class="totals-value" id="cart-subtotal"><%=@total%></div>
+    </div>
+    
+  </div>
+
+      <button class="checkout">Checkout</button>
+</div>
 

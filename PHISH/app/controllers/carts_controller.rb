@@ -10,7 +10,6 @@ class CartsController < ApplicationController
         @userid = 0
     end
   end
-
   # GET /carts/1 or /carts/1.json
   def show
   end
